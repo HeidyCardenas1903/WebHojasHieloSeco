@@ -10,3 +10,6 @@ def nosotros(request):
 
 def ventas(request):
     return render(request,'hojas/index.html' )
+
+def crear_venta(request):
+    return render(request,'hojas/crear.html')
