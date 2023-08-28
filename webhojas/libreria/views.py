@@ -6,4 +6,7 @@ def index(request):
     return HttpResponse("<h1>Bienvenido<h1>")
 
 def nosotros(request):
-    return render (request,'html/index.html' )
+    return render (request,'paginas/nosotros.html' )
+
+def ventas(request):
+    return render(request,'hojas/index.html' )

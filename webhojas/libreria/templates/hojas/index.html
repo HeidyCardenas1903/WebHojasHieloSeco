@@ -1,16 +1,16 @@
 <!-- Mostara todos los registros -->
 {% extends "base.html" %}
 
-{% block titulo  %} Lista de Hojas {% endblock %}
+{% block titulo  %} Lista de Ventas {% endblock %}
 
 {% block contenido %}
 
 <div class="card">
     <div class="card-header">
-        Listar hojas
+        Listar ventas
     </div>
     <div class="card-body">
-        <h4 class="card-title">Hojas</h4>
+        <h4 class="card-title">Ventas</h4>
 
         <div class="table-responsive">
             <table class="table table-primary">
@@ -19,20 +19,14 @@
                         <th scope="col">ID</th>
                         <th scope="col">Nombre cliente</th>
                         <th scope="col">Tipo de cliente</th>
-                        <th scope="col"></th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Subtotal</th>
+                        <th scope="col">Neto a pagar</th>
+                        <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="">
-                        <td scope="row">R1C1</td>
-                        <td>R1C2</td>
-                        <td>R1C3</td>
-                    </tr>
-                    <tr class="">
-                        <td scope="row">Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
-                    </tr>
+
                 </tbody>
             </table>
         </div>
