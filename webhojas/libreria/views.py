@@ -4,3 +4,6 @@ from django.http import HttpResponse
 
 def index(request):
     return HttpResponse("<h1>Bienvenido<h1>")
+
+def nosotros(request):
+    return render (request,'html/index.html' )
