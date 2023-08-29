@@ -31,3 +31,4 @@ def crear_venta(request):
 def editar_venta(request):
     '''funcion para la seccion de editar ventas'''
     return render(request,'hojas/editar.html')
+
