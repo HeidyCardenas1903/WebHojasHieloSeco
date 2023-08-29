@@ -1,13 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-<<<<<<< HEAD
+
 from .models import Ventas
 # Create your views here.
-=======
+
 from .forms import VentasForm
 from .models import Ventas
 
->>>>>>> cbfe08ab11a7170c571a0f7a2ba81d847ec01281
 
 def inicio(request):
     '''Funcion para el portal de inicio'''
