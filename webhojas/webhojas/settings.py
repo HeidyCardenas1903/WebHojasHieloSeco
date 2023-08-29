@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'webhojas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ventas',
+        'NAME': 'hojashielo',
         'USER':'root',
         'PASSWORD':'',
         'HOST':'localhost',
