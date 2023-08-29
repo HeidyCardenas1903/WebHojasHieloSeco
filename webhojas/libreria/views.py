@@ -13,3 +13,6 @@ def ventas(request):
 
 def crear_venta(request):
     return render(request,'hojas/crear.html')
+
+def editar_venta(request):
+    return render(request,'hojas/editar.html')
