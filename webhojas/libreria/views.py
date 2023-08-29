@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
+from .forms import VentasForm
+from .models import Ventas
+
 
 def inicio(request):
     '''Funcion para el portal de inicio'''
@@ -16,7 +18,10 @@ def ventas(request):
 
 def crear_venta(request):
     '''funcion para la seccion de crear ventas'''
-    return render(request,'hojas/crear.html')
+    formulario = VentasForm(request.POST or None)
+    return render(request,'hojas/crear.html',{
+        'formulario':formulario
+    })
 
 def editar_venta(request):
     '''funcion para la seccion de editar ventas'''
