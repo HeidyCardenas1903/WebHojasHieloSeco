@@ -20,13 +20,28 @@
                         <th scope="col">Nombre cliente</th>
                         <th scope="col">Tipo de cliente</th>
                         <th scope="col">Cantidad</th>
+                        <th scope="col">Precio por hoja</th>
                         <th scope="col">Subtotal</th>
                         <th scope="col">Neto a pagar</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-
+                    <tr>
+                        <td>1</td>
+                        <td>Benito Perez</td>
+                        <td>3</td>
+                        <td>45</td>
+                        <td>300</td>
+                        <td>$4994.00</td>
+                        <td>$2998.00</td>
+                        <td> 
+                            <!-- Href se llama con el name del url -->
+                            <a id="botoneditar" class="btn btn-primary" href="{% url 'editar' %}" role="button">Editar</a>
+                            | 
+                            <a id="botoneditar" class="btn btn-danger" href="#" role="button">Eliminar</a>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
