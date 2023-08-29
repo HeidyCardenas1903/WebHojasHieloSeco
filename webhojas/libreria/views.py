@@ -1,9 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-
 from .models import Ventas
-# Create your views here.
-
 from .forms import VentasForm
 from .models import Ventas
 
@@ -24,6 +21,10 @@ def ventas(request):
 def crear_venta(request):
     '''funcion para la seccion de crear ventas'''
     formulario = VentasForm(request.POST or None)
+    if formulario.is_valid():#si el formulario es valido, se guarda el registro en la bd y se redirecciona a la seccion ventas
+        formulario.save()
+        return redirect('ventas')
+
     return render(request,'hojas/crear.html',{
         'formulario':formulario
     })
