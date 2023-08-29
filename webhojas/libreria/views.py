@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Ventas
 # Create your views here.
 
 def inicio(request):
@@ -11,8 +12,9 @@ def nosotros(request):
     return render (request,'html/nosotros.html' )
 
 def ventas(request):
-    '''funcion para la seccion de ventas'''
-    return render(request,'hojas/index.html' )
+    ventas = Ventas.objects.all()
+    print(ventas)
+    return render(request,'hojas/index.html',{'ventas': ventas})
 
 def crear_venta(request):
     '''funcion para la seccion de crear ventas'''
