@@ -27,14 +27,16 @@
                     </tr>
                 </thead>
                 <tbody>
+
+                    {% for venta in ventas %}
                     <tr>
-                        <td>1</td>
-                        <td>Benito Perez</td>
-                        <td>3</td>
-                        <td>45</td>
-                        <td>300</td>
-                        <td>$4994.00</td>
-                        <td>$2998.00</td>
+                        <td>{{venta.id}}</td>
+                        <td>{{venta.nombre}}</td>
+                        <td>{{venta.tipo_cliente}}</td>
+                        <td>{{venta.cantidad}}</td>
+                        <td>{{venta.precio_por_hoja}}</td>
+                        <td>{{venta.subtotal}}</td>
+                        <td>{{venta.neto_por_pagar}}</td>
                         <td> 
                             <!-- Href se llama con el name del url -->
                             <a id="botoneditar" class="btn btn-primary" href="{% url 'editar' %}" role="button">Editar</a>
@@ -42,6 +44,7 @@
                             <a id="botoneditar" class="btn btn-danger" href="#" role="button">Eliminar</a>
                         </td>
                     </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

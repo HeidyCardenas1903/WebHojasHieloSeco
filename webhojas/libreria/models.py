@@ -1,5 +1,6 @@
 from django.db import models
 
+# creacion de tbala ventas :)
 class Ventas(models.Model):
     '''creacion tabla ventas'''
     id=models.AutoField(primary_key=True)
