@@ -36,6 +36,6 @@ def editar_venta(request):
 
 def eliminar(request,id):
     '''funcion para eliminar un registro'''
-    venta = Ventas.objects.get(id=id)
+    venta = Ventas.objects.get(id=id) #Verifica el id del cliente para eliminar el registro y devolver a la misma seccion donde se encontraba
     venta.delete()
     return redirect('ventas')
