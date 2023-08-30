@@ -1,9 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-
 from .models import Ventas
-# Create your views here.
-
 from .forms import VentasForm
 from .models import Ventas
 
@@ -24,6 +21,10 @@ def ventas(request):
 def crear_venta(request):
     '''funcion para la seccion de crear ventas'''
     formulario = VentasForm(request.POST or None)
+    if formulario.is_valid():#si el formulario es valido, se guarda el registro en la bd y se redirecciona a la seccion ventas
+        formulario.save()
+        return redirect('ventas')
+
     return render(request,'hojas/crear.html',{
         'formulario':formulario
     })
@@ -32,3 +33,12 @@ def editar_venta(request):
     '''funcion para la seccion de editar ventas'''
     return render(request,'hojas/editar.html')
 
+<<<<<<< HEAD
+=======
+
+def eliminar(request,id):
+    '''funcion para eliminar un registro'''
+    venta = Ventas.objects.get(id=id) #Verifica el id del cliente para eliminar el registro y devolver a la misma seccion donde se encontraba
+    venta.delete()
+    return redirect('ventas')
+>>>>>>> 3cfd6dbf6a3d337ad85f0c02d4f8e7c6e482be8e
