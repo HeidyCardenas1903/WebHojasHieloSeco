@@ -39,3 +39,6 @@ def eliminar(request,id):
     venta = Ventas.objects.get(id=id) #Verifica el id del cliente para eliminar el registro y devolver a la misma seccion donde se encontraba
     venta.delete()
     return redirect('ventas')
+
+
+
