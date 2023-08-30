@@ -32,3 +32,6 @@ def editar_venta(request):
     '''funcion para la seccion de editar ventas'''
     return render(request,'hojas/editar.html')
 
+def calcular_total(request):
+    '''funcion para la seccion de calcular total'''
+    
