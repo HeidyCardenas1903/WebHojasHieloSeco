@@ -76,11 +76,13 @@ def nosotros(request):
     '''Funcion para el final de seccion nosotros'''
     return render (request,'html/nosotros.html' )
 
+@login_required(login_url='login')
 def ventas(request):
     ventas = Ventas.objects.all()
     print(ventas)
     return render(request,'hojas/index.html',{'ventas': ventas})
 
+@login_required(login_url='login')
 def crear_venta(request):
     '''funcion para la seccion de crear ventas'''
     formulario = VentasForm(request.POST or None)
@@ -91,6 +93,7 @@ def crear_venta(request):
     return render(request,'hojas/crear.html',{
         'formulario':formulario
     })
+
 
 def editar_venta(request):
     '''funcion para la seccion de editar ventas'''
