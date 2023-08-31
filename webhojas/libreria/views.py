@@ -29,9 +29,15 @@ def crear_venta(request):
         'formulario':formulario
     })
 
-def editar_venta(request):
-    '''funcion para la seccion de editar ventas'''
-    return render(request,'hojas/editar.html')
+def editar_venta(request,id):
+    # Funcion para editar un registro y la condicial para guardar los cambios que sean realizados 
+    venta = Ventas.objects.get(id=id)
+    formulario = VentasForm(request.POST or None, instance=venta) 
+    if formulario.is_valid() and request.POST:
+        formulario.save()
+        return redirect('ventas')
+        
+    return render(request,'hojas/editar.html', {'formulario': formulario})
 
 def eliminar(request,id):
     '''funcion para eliminar un registro'''

@@ -6,12 +6,20 @@
       <label for="" class="form-label">{{campo.label}}</label>
       
       <input type="{{campo.field.widget.input_type}}"
-        class="form-control" name="{{campo.name}}" id="" aria-describedby="helpId" placeholder="{{campo.label}}">
+        class="form-control" 
+        name="{{campo.name}}" 
+        id="" 
+        aria-describedby="helpId" 
+        placeholder="{{campo.label}}"
+        value="{{ campo.value }}"
+        >
+
     </div>
     <div class="col-12 help-text">
       {{campo.errors}}
     </div>
   {%endfor%}
-  <input type="submit" class="btn btn-success" value="Crear">
+  <input type="submit" class="btn btn-success" value="Guardar">
   <input type="submit" class="btn btn-warning" value="Calcular">
+  <a name="" id="" class="btn btn-secondary" href="{% url 'ventas' %}" role="button">Cancelar</a>
 </form>

@@ -39,9 +39,9 @@
                         <td>{{venta.neto_por_pagar}}</td>
                         <td> 
                             <!-- Href se llama con el name del url -->
-                            <a id="botoneditar" class="btn btn-primary" href="{% url 'editar' %}" role="button">Editar</a>
+                            <a id="botoneditar" class="btn btn-primary" href="{% url 'editar' venta.id %}" role="button">Editar</a>
                             | 
-                            <a id="botoneditar" class="btn btn-danger" href="{% url 'eliminar' venta.id%}" role="button">Eliminar</a>
+                            <a id="botoneditar" class="btn btn-danger" href="{% url 'eliminar' venta.id %}" role="button">Eliminar</a>
                         </td>
                     </tr>
                     {% endfor %}
